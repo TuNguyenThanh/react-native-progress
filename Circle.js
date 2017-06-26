@@ -111,7 +111,7 @@ export class ProgressCircle extends Component {
     const angle = animated ? Animated.multiply(progress, CIRCLE) : progress * CIRCLE;
 
     return (
-      <View style={[styles.container, style]} {...restProps}>
+      <TouchableOpacity style={[styles.container, style]} {...restProps} onPress={this.props.itemPress}>
         <Surface
           width={size}
           height={size}
@@ -183,7 +183,7 @@ export class ProgressCircle extends Component {
           </View>
         ) : false}
         {children}
-      </View>
+      </TouchableOpacity>
     );
   }
 }
